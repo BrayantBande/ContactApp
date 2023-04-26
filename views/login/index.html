@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/output.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Iniciar Sesion</title>
+</head>
+<body class="bg-zinc-50">
+    <nav id="navbar" class="fixed top-0 right-0 left-0 h-16 bg-orange-700">    
+    </nav>
+
+    
+
+    <div class="pt-20 h-screen flex max-w-7xl mx-auto justify-center items-center px-4">
+      <div class="hidden lg:flex w-2/4 justify-center items-center">
+        <img class="w-3/4 " src="/images/signup.svg" alt="imagen para registro">
+      </div>
+      <form id="form" class="flex flex-col gap-4 p-4 rounded-lg text-md bg-zinc-200 shadow-lg w-full md:w-9/12 lg:w-2/4 lg:mt-0 mt-16">
+
+        <div class="flex flex-col gap-2">
+            <label for="email-input" class="font-bold text-zinc-900">Correo<span class="text-red-500">*</span></label>
+            <input class="rounded-lg p-2 bg-zinc-100 focus:outline-orange-700" type="email" id="email-input" name="email-input" autocomplete="off"">
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <label for="password-input" class="font-bold text-zinc-900">Contraseña<span class="text-red-500">*</span></label>
+            <input class="rounded-lg p-2 bg-zinc-100 focus:outline-orange-700" type="password" id="password-input" name="password-input" autocomplete="off">
+            <p id="error-text" class="text-sm text-red-600"></p>
+        </div>
+
+        <button id="form-btn" class="bg-orange-700 py-2 px-4 rounded-lg font-bold text-white text-center hover:bg-orange-800 transition ease-in-out cursor-pointer">Iniciar Sesion</button>
+      </form>  
+    </div>
+
+    <script src="../components/nav.js"></script>
+    <script src="index.js"></script>  
+</body>
+</html>
