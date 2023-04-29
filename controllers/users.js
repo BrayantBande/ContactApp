@@ -57,13 +57,14 @@ usersRouter.patch('/:id/:token', async (request, response)=>{
    try {
       console.log('queso');
       const token = request.params.token;
+      const user = await User.findById(id)
       console.log(token);
       const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)
       console.log(decodedToken);
       const id = decodedToken.id
       console.log(id);
 
-      await User.findByIdAndUpdate(id, { verified: true });
+      await User.findByIdAndUpdate(user._id, { verified: true });
       console.log('jamon');
       return response.sendStatus(200)
    } catch (error) {
