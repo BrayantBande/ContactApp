@@ -74,7 +74,9 @@ try {
         email: emailInput.value,
         password: passwordInput.value,
     }
+    console.log('arepa');
     const { data } = await axios.post('/api/users', newUser)
+    console.log('queso');
     createNotification(false,data);
     setTimeout(()=> {
         notification.innerHTML = '';
@@ -91,7 +93,7 @@ try {
     
 
 } catch (error) {
-    createNotification(true,error.response);
+    createNotification(true, error.response);
     setTimeout(()=> {
         notification.innerHTML = '';
     }, 3000)
