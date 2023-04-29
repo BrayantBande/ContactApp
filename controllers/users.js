@@ -61,6 +61,8 @@ usersRouter.patch('/:id/:token', async (request, response)=>{
       const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)
       console.log(decodedToken);
       const id = decodedToken.id
+      console.log(id);
+
       await User.findByIdAndUpdate(id, { verified: true });
       console.log('jamon');
       return response.sendStatus(200)
