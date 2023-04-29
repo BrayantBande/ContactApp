@@ -91,7 +91,7 @@ try {
     
 
 } catch (error) {
-    createNotification(true,error.response.data.error);
+    createNotification(true,error.response);
     setTimeout(()=> {
         notification.innerHTML = '';
     }, 3000)
