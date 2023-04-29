@@ -11,9 +11,43 @@ const completedCountSpan = document.querySelector('.completed-count');
 const incompletedCountSpan = document.querySelector('.incompleted-count');
 
 saveBtn.addEventListener('click', async e =>{
-	const { data } = await axios.get(`/api/todos/`);
-	console.log(data);
-})
+	const { data } = await axios.patch(`/api/todos`);
+console.log(data);
+
+
+	// const listItem = document.createElement('li');
+	// listItem.id = data._id
+	// console.log(listItem.id);
+	// listItem.classList.add('flex', 'flex-row');
+	// listItem.innerHTML = `
+	// 	<div class="group grow flex flex-row justify-between">
+	// 		<button class="delete-icon w-12 md:w-14 hidden group-hover:flex group-hover:justify-center group-hover:items-center cursor-pointer bg-red-500 origin-left">
+	// 			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-7 md:w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+	// 				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+	// 			</svg>
+	// 		</button>
+	// 		<p class="p-4 break-words grow">${data.nombre}</p>
+	// 		<p class="p-4 break-words grow">${data.apellido}</p>
+	// 		<p class="p-4 break-words grow">${data.numero}</p>
+	// 	</div>
+	// 	<button class="edit-icon w-12 md:w-14 flex justify-center items-center cursor-pointer border-l border-slate-300 dark:border-slate-400 hover:bg-orange-300 transition duration-300 easy-in-out">
+	// 	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+	// 	<path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+	//   	</svg>	  
+	// 	</button>
+	// `;
+
+	// // Append listItem
+	// ul.append(listItem);
+
+	// // Empty input
+	// nameInput.value = '',
+	// lastNameInput.value = '',
+	// number.value = ''
+
+	// todoCount();
+});
+
 
 
 const totalCount = () => {
